@@ -1,0 +1,16 @@
+﻿{
+  [
+    {
+      "Word": "Glockenspiel",
+      "Def": "A musical instrument with tuned metal bars"
+    },
+    {
+      "Word": "Semaphore",
+      "Def": "A synconization token for asynchronous processes"
+    },
+    {
+      "Word": "Boat",
+      "Def":  "A vehicle for water transport"
+    }
+  ]
+}
