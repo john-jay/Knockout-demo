@@ -2,8 +2,8 @@
 
 class Quiz {
     public testItems = ko.observableArray<VocItem>();
-    //public curerntItem = 1;
-    //public item: VocItem;
+    public curerntItem = 0;
+    public item = ko.observable<VocItem>();
 
     constructor() {
         this.loadData();
@@ -11,10 +11,11 @@ class Quiz {
 
     loadData() {
         $.getJSON("/Assets/VocTest.json", data => {
-            var items = $.map(data.lesson, item => {
+            var items: VocItem[] = $.map(data.lesson, item => {
                 return new VocItem(item);
             });
             this.testItems(items);
+            this.item(items[0]);
         });
     }
 }
