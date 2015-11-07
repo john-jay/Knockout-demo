@@ -1,16 +1,16 @@
 ﻿{
-  [
+  "lesson": [
     {
-      "Word": "Glockenspiel",
-      "Def": "A musical instrument with tuned metal bars"
+      "word": "Glockenspiel",
+      "def": "A musical instrument with tuned metal bars"
     },
     {
-      "Word": "Semaphore",
-      "Def": "A synconization token for asynchronous processes"
+      "word": "Semaphore",
+      "def": "A synconization token for asynchronous processes"
     },
     {
-      "Word": "Boat",
-      "Def":  "A vehicle for water transport"
+      "word": "Boat",
+      "def": "A vehicle for water transport"
     }
   ]
 }

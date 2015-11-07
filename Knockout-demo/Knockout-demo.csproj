@@ -70,6 +70,10 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Assets\VocTest.json" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -90,6 +94,7 @@
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="App\Quiz.ts" />
+    <TypeScriptCompile Include="App\VocItem.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\knockout\knockout.d.ts" />
   </ItemGroup>
