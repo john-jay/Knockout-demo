@@ -3,9 +3,14 @@
 <head>
     <title>Ko Demo</title>
     <meta charset="utf-8" />
+    <link href="Styles/Site.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Knockout demo</h1>
+    <h2>Vocabulary</h2>
+    <div data-bind="text: item.def"></div>
+    <button data-bind="text: item.word"></button>
+
     <script src="Scripts/knockout-3.3.0.debug.js"></script>
+    <script src="App/Quiz.js"></script>
 </body>
 </html>
