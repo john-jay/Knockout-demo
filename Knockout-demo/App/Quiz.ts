@@ -1,7 +1,7 @@
 ﻿
 
 class Quiz {
-    public testItems = ko.observableArray<VocItem>();
+    public testItems: VocItem[];
     public seq = 0;
     public curItem = ko.observable<VocItem>();
     public showCorrect = ko.observable(false);
@@ -15,18 +15,18 @@ class Quiz {
             var items: VocItem[] = $.map(data.lesson, item => {
                 return new VocItem(item);
             });
-            this.testItems(items);
+            this.testItems = items;
             this.curItem(items[0]);
         });
     }
     clickWord = (clickedItem: VocItem) => {
-        // show if correct and next button
+        // show "correct" message and next button
         var isCorrect = clickedItem.word === this.curItem().word;
         this.showCorrect(isCorrect);
     }
     goNext = () => {
         this.seq++;
-        this.curItem(this.testItems()[this.seq]);
+        this.curItem(this.testItems[this.seq]);
         this.showCorrect(false);
     }
 }
