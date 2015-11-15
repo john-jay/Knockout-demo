@@ -2,8 +2,9 @@
 
 class Quiz {
     public testItems = ko.observableArray<VocItem>();
-    public curerntItem = 0;
-    public item = ko.observable<VocItem>();
+    public seq = 0;
+    public curItem = ko.observable<VocItem>();
+    public showCorrect = ko.observable(false);
 
     constructor() {
         this.loadData();
@@ -15,8 +16,18 @@ class Quiz {
                 return new VocItem(item);
             });
             this.testItems(items);
-            this.item(items[0]);
+            this.curItem(items[0]);
         });
+    }
+    clickWord = (clickedItem: VocItem) => {
+        // show if correct and next button
+        var isCorrect = clickedItem.word === this.curItem().word;
+        this.showCorrect(isCorrect);
+    }
+    goNext = () => {
+        this.seq++;
+        this.curItem(this.testItems()[this.seq]);
+        this.showCorrect(false);
     }
 }
 

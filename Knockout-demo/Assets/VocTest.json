@@ -6,10 +6,10 @@
     },
     {
       "word": "Semaphore",
-      "def": "A synconization token for asynchronous processes"
+      "def": "A synchronization token for asynchronous processes"
     },
     {
-      "word": "Boat",
+      "word": "Sloop",
       "def": "A vehicle for water transport"
     }
   ]

@@ -7,12 +7,15 @@
 </head>
 <body>
     <h2>Vocabulary</h2>
-    <div data-bind="with: item">
+    <div data-bind="with: curItem">
         <p data-bind="text: def"></p>
         <div data-bind="foreach: $parent.testItems">
-            <button data-bind="text: word"></button>
+            <button data-bind="text: word, click: $parents[1].clickWord"></button>
         </div>
     </div>
+    <p data-bind="if: showCorrect" class="correct">
+        Correct <button data-bind="click: goNext">Next</button>
+    </p>
 
     <script src="Scripts/jquery-2.1.4.js"></script>
     <script src="Scripts/knockout-3.3.0.debug.js"></script>
