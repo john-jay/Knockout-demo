@@ -8,3 +8,9 @@
 .correct {
     color: green;
 }
+
+.answer-btn {
+    padding: 4px;
+    width: 87px;
+    background-color: white;
+}

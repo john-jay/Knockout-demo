@@ -7,19 +7,24 @@
 </head>
 <body>
     <h2>Vocabulary</h2>
+    <p class="help"></p>
     <div data-bind="with: curItem">
         <p data-bind="text: def"></p>
-        <div data-bind="foreach: $parent.testItems">
-            <button data-bind="text: word, click: $parents[1].clickWord"></button>
-        </div>
+    </div>
+    <div data-bind="foreach: randomChoices">
+        <button data-bind="text: $data, click: $parent.clickWord" class="answer-btn"></button>
     </div>
     <p data-bind="if: showCorrect" class="correct">
         Correct <button data-bind="click: goNext">Next</button>
     </p>
+    <p data-bind="if: isComplete" class="correct">
+        Complete!
+    </p>
 
     <script src="Scripts/jquery-2.1.4.js"></script>
     <script src="Scripts/knockout-3.3.0.debug.js"></script>
-    <script src="App/Quiz.js"></script>
+    <script src="App/Util.js"></script>
     <script src="App/VocItem.js"></script>
+    <script src="App/Quiz.js"></script>
 </body>
 </html>

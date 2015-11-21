@@ -1,10 +1,14 @@
 ﻿
 
 class Quiz {
-    public testItems: VocItem[];
-    public seq = 0;
-    public curItem = ko.observable<VocItem>();
-    public showCorrect = ko.observable(false);
+    testItems: VocItem[];
+    choices : string[];
+    seq = 0;
+
+    curItem = ko.observable<VocItem>();
+    showCorrect = ko.observable(false);
+    randomChoices = ko.observableArray<string>();
+    isComplete = ko.observable(false);
 
     constructor() {
         this.loadData();
@@ -16,18 +20,26 @@ class Quiz {
                 return new VocItem(item);
             });
             this.testItems = items;
-            this.curItem(items[0]);
+            this.choices = $.map(items, item => { return item.word; });
+            this.goNext();
+            this.randomChoices(Util.mixUp(this.choices));
         });
     }
-    clickWord = (clickedItem: VocItem) => {
+    clickWord = (clickedItem: string) => {
         // show "correct" message and next button
-        var isCorrect = clickedItem.word === this.curItem().word;
+        var isCorrect = clickedItem === this.curItem().word;
         this.showCorrect(isCorrect);
     }
     goNext = () => {
-        this.seq++;
-        this.curItem(this.testItems[this.seq]);
         this.showCorrect(false);
+        if (this.seq === this.testItems.length) {
+            this.curItem(null);
+            this.randomChoices([]);
+            this.isComplete(true);
+        } else {
+            this.curItem(this.testItems[this.seq]);
+            this.seq++;
+        }
     }
 }
 

@@ -94,6 +94,7 @@
   <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="App\Quiz.ts" />
+    <TypeScriptCompile Include="App\Util.ts" />
     <TypeScriptCompile Include="App\VocItem.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\knockout\knockout.d.ts" />
